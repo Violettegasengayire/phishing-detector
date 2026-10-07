@@ -1,0 +1,290 @@
+{
+  "cases": [
+    {
+      "status": "valid_legit",
+      "kind": "legit_url",
+      "input": "https://github.com",
+      "validation": "accepted",
+      "model_prediction": "low (p=0.004)",
+      "expected": "low",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "valid_legit",
+      "kind": "legit_url",
+      "input": "http://github.com",
+      "validation": "accepted",
+      "model_prediction": "low (p=0.001)",
+      "expected": "low",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "valid_legit",
+      "kind": "legit_url",
+      "input": "google.com",
+      "validation": "accepted",
+      "model_prediction": "low (p=0.001)",
+      "expected": "low",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "valid_legit",
+      "kind": "legit_url",
+      "input": "www.wikipedia.org",
+      "validation": "accepted",
+      "model_prediction": "low (p=0.001)",
+      "expected": "low",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "valid_legit",
+      "kind": "legit_url",
+      "input": "https://microsoft.com",
+      "validation": "accepted",
+      "model_prediction": "low (p=0.004)",
+      "expected": "low",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "valid_legit",
+      "kind": "legit_url",
+      "input": "https://en.wikipedia.org/wiki/Phishing",
+      "validation": "accepted",
+      "model_prediction": "low (p=0.006)",
+      "expected": "low",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "valid_legit",
+      "kind": "legit_url",
+      "input": "https://www.google.com/search?q=python",
+      "validation": "accepted",
+      "model_prediction": "low (p=0.004)",
+      "expected": "low",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "empty",
+      "input": "",
+      "validation": "rejected: Please enter a website address.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "whitespace",
+      "input": "   ",
+      "validation": "rejected: Please enter a website address.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "email",
+      "input": "fabriceraymond53@gmail.com",
+      "validation": "rejected: Enter a valid website address, for example: google.com",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "email_with_scheme",
+      "input": "http://user@gmail.com",
+      "validation": "rejected: Enter a valid website address, for example: google.com",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "plain_text",
+      "input": "hello",
+      "validation": "rejected: Enter a valid website address, for example: google.com",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "single_label",
+      "input": "google",
+      "validation": "rejected: Enter a valid website address, for example: google.com",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "localhost",
+      "input": "http://localhost/",
+      "validation": "rejected: Internal and loopback addresses are not accepted.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "loopback",
+      "input": "http://127.0.0.1/",
+      "validation": "rejected: Private, loopback and metadata IPs are not accepted.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "private_192",
+      "input": "http://192.168.1.1/",
+      "validation": "rejected: Private, loopback and metadata IPs are not accepted.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "private_10",
+      "input": "http://10.0.0.1/",
+      "validation": "rejected: Private, loopback and metadata IPs are not accepted.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "metadata_ip",
+      "input": "http://169.254.169.254/latest/meta-data/",
+      "validation": "rejected: Private, loopback and metadata IPs are not accepted.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "file_scheme",
+      "input": "file:///etc/passwd",
+      "validation": "rejected: Only http and https addresses are supported.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "ftp_scheme",
+      "input": "ftp://example.com/",
+      "validation": "rejected: Only http and https addresses are supported.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "javascript_scheme",
+      "input": "javascript:alert(1)",
+      "validation": "rejected: Only http and https addresses are supported.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "data_scheme",
+      "input": "data:text/html,<script>",
+      "validation": "rejected: Only http and https addresses are supported.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "mailto",
+      "input": "mailto:someone@example.com",
+      "validation": "rejected: Only http and https addresses are supported.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "malformed_underscore",
+      "input": "bad_label.example",
+      "validation": "rejected: Enter a valid website address, for example: google.com",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "malformed_leading_dash",
+      "input": "-example.com",
+      "validation": "rejected: Enter a valid website address, for example: google.com",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "malformed_numeric_tld",
+      "input": "example.123",
+      "validation": "rejected: Enter a valid website address, for example: google.com",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "embedded_credentials",
+      "input": "http://user:pass@evil.example/",
+      "validation": "rejected: Enter a valid website address, for example: google.com",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "invalid",
+      "kind": "overlong",
+      "input": "http://aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.com/",
+      "validation": "rejected: That address is too long to analyse.",
+      "model_prediction": "model never called",
+      "expected": "rejected",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "phish_https",
+      "kind": "https_phishing_like",
+      "input": "https://secure-login-paypal-verify.weebly.com/account/update",
+      "validation": "accepted",
+      "model_prediction": "high (p=1.000)",
+      "expected": "high",
+      "pass_fail": "PASS"
+    },
+    {
+      "status": "phish_subtle",
+      "kind": "subtle_phishing",
+      "input": "http://a1b2-c3d4-e5f6-g7h8.weebly.com/x/y/z/ident.html",
+      "validation": "accepted",
+      "model_prediction": "high (p=0.996)",
+      "expected": "medium_or_high",
+      "pass_fail": "PASS"
+    }
+  ],
+  "case_summary": {
+    "total": 30,
+    "passed": 30,
+    "failed": 0
+  },
+  "dataset_metrics": {
+    "test_set_size": 1659,
+    "accuracy": 0.8957,
+    "precision_phishing": 0.8804,
+    "recall_phishing": 0.9405,
+    "f1_score": 0.9095,
+    "true_positives": 869,
+    "true_negatives": 617,
+    "false_positives": 118,
+    "false_negatives": 55
+  }
+}

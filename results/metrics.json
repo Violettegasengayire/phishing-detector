@@ -1,0 +1,46 @@
+{
+  "model_version": "3.0.0-hostname-ngram",
+  "dataset": "UCI PhiUSIIL (2024) phishing hosts + Tranco legitimate hosts",
+  "decision_threshold": 0.8400000000000005,
+  "accuracy": 0.8980180576965426,
+  "precision": 0.9499887107699255,
+  "recall": 0.6676981671030707,
+  "f1_score": 0.7842132239876987,
+  "roc_auc": 0.9453559734873979,
+  "confusion_matrix": {
+    "true_negatives": 32364,
+    "false_positives": 443,
+    "false_negatives": 4188,
+    "true_positives": 8415
+  },
+  "test_set_size": 45410,
+  "class_distribution_test": {
+    "legitimate": 32807,
+    "phishing": 12603
+  },
+  "feature_names": [
+    "host_length",
+    "n_labels",
+    "n_subdomains",
+    "longest_label_length",
+    "mean_label_length",
+    "tld_length",
+    "is_free_tld",
+    "n_hyphens",
+    "hyphen_ratio",
+    "n_digits",
+    "digit_ratio",
+    "has_digit_in_tld_label",
+    "host_entropy",
+    "vowel_ratio",
+    "max_consonant_run",
+    "is_ip_host",
+    "is_shortener",
+    "https_token_in_host",
+    "n_sensitive_words",
+    "has_hex_escape",
+    "has_punycode",
+    "n_unique_chars",
+    "repeated_char_ratio"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "engineered": {
+    "threshold": 0.5,
+    "accuracy": 0.7972693239374588,
+    "precision": 0.6197391610856539,
+    "recall": 0.6975323335713719,
+    "f1": 0.65633865910109,
+    "roc_auc": 0.8552949247624998,
+    "holdout_legit": {
+      "www.google.com": 0.357,
+      "github.com": 0.323,
+      "en.wikipedia.org": 0.192,
+      "docs.python.org": 0.274,
+      "mail.google.com": 0.163,
+      "accounts.google.com": 0.022,
+      "login.microsoftonline.com": 0.214,
+      "aws.amazon.com": 0.126,
+      "www.paypal.com": 0.342,
+      "www.coca-cola.com": 0.494,
+      "t-mobile.com": 0.488,
+      "www.hewlett-packard.com": 0.632,
+      "stackoverflow.com": 0.509,
+      "support.apple.com": 0.02,
+      "www.bbc.co.uk": 0.091,
+      "news.ycombinator.com": 0.253
+    },
+    "holdout_phishing": {
+      "paypal-secure-login.verify-account.tk": 1.0,
+      "secure-appleid.apple.com.verify-login.ru": 0.475,
+      "banking-chase-verify.com": 0.996,
+      "facebook-login-secure.ml": 1.0,
+      "appleid.apple.com-verify-account-login.secure-update.info": 1.0,
+      "google.com.account-verify.suspicious-domain.xyz": 0.979,
+      "httpsamazon-security.com": 1.0,
+      "f0519141.xsph.ru": 0.998,
+      "shprakserf.gq": 0.999,
+      "secure-login-paypal-verify.weebly.com": 1.0
+    },
+    "holdout_false_positives": 2,
+    "holdout_missed": 1
+  },
+  "ngram": {
+    "threshold": 0.5,
+    "accuracy": 0.8665271966527197,
+    "precision": 0.7232764505119454,
+    "recall": 0.8407522018567007,
+    "f1": 0.7776024657835835,
+    "roc_auc": 0.9480357399878234,
+    "holdout_legit": {
+      "www.google.com": 0.287,
+      "github.com": 0.332,
+      "en.wikipedia.org": 0.001,
+      "docs.python.org": 0.021,
+      "mail.google.com": 0.027,
+      "accounts.google.com": 0.049,
+      "login.microsoftonline.com": 0.774,
+      "aws.amazon.com": 0.383,
+      "www.paypal.com": 0.301,
+      "www.coca-cola.com": 0.693,
+      "t-mobile.com": 0.352,
+      "www.hewlett-packard.com": 0.637,
+      "stackoverflow.com": 0.226,
+      "support.apple.com": 0.067,
+      "www.bbc.co.uk": 0.212,
+      "news.ycombinator.com": 0.022
+    },
+    "holdout_phishing": {
+      "paypal-secure-login.verify-account.tk": 1.0,
+      "secure-appleid.apple.com.verify-login.ru": 0.999,
+      "banking-chase-verify.com": 0.998,
+      "facebook-login-secure.ml": 1.0,
+      "appleid.apple.com-verify-account-login.secure-update.info": 0.999,
+      "google.com.account-verify.suspicious-domain.xyz": 1.0,
+      "httpsamazon-security.com": 1.0,
+      "f0519141.xsph.ru": 1.0,
+      "shprakserf.gq": 0.999,
+      "secure-login-paypal-verify.weebly.com": 1.0
+    },
+    "holdout_false_positives": 3,
+    "holdout_missed": 0
+  }
+}

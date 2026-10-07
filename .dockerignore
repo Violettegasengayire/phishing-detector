@@ -1,0 +1,15 @@
+.git
+.github
+.vscode
+.__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.egg-info
+.venv
+.clean-venv
+.env
+.streamlit
+notebooks
+results
+*.log
